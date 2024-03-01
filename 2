@@ -1,0 +1,20 @@
+function removeDuplicatesIgnoreCase(array) {
+  // Convert all elements to lowercase for case-insensitive comparison
+  const lowerCaseArray = array.map(item => item.toLowerCase());
+  
+  // Use a Set to remove duplicates
+  const uniqueItemsSet = new Set(lowerCaseArray);
+  
+  // Convert the Set back to an array
+  const uniqueItemsArray = Array.from(uniqueItemsSet);
+  
+  // Convert the unique items back to their original case
+  const uniqueItems = uniqueItemsArray.map(item => array[lowerCaseArray.indexOf(item)]);
+  
+  return uniqueItems;
+}
+
+// Example usage:
+const originalArray = ["Apple", "Banana", "apple", "banana", "Orange", "orange"];
+const uniqueArray = removeDuplicatesIgnoreCase(originalArray);
+console.log(uniqueArray); // Output: ["Apple", "Banana", "Orange"]
