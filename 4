@@ -1,0 +1,26 @@
+// Get the paragraph element
+const paragraph = document.getElementById('paragraph');
+
+// Split the paragraph text into an array of words
+const words = paragraph.textContent.split(' ');
+
+// Iterate through each word
+words.forEach((word, index) => {
+  // Check if the word has more than 8 characters
+  if (word.length > 8) {
+    // Create a span element with yellow background color
+    const span = document.createElement('span');
+    span.style.backgroundColor = 'yellow';
+    span.textContent = word + ' '; // Add a space after the word
+
+    // Replace the word in the array with the span element
+    words[index] = span.outerHTML;
+  }
+});
+
+// Set the paragraph content with the modified words array
+paragraph.innerHTML = words.join('');
+<p id="paragraph">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</p>
+
