@@ -1,0 +1,14 @@
+function isFirstCharUppercase(str) {
+  // Get the first character of the string
+  const firstChar = str.charAt(0);
+  
+  // Check if the first character is uppercase
+  return firstChar === firstChar.toUpperCase();
+}
+
+// Example usage:
+const testString1 = "Hello";
+const testString2 = "world";
+
+console.log(`Is the first character of "${testString1}" uppercase? ${isFirstCharUppercase(testString1)}`);
+console.log(`Is the first character of "${testString2}" uppercase? ${isFirstCharUppercase(testString2)}`);
